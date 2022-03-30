@@ -1,0 +1,13 @@
+<div *ngIf="data.name" class="product-container">
+    <img [src]="data.image">
+    <div>
+        <h1>{{data.name}}</h1>
+        <h3>Model: {{data.model}}</h3>
+        <h3>Pershkrimi: {{data.description}}</h3>
+        <h3 class="price">Çmimi: {{data.price | currency:'EUR'}}</h3>
+        <button><mat-icon>add_shopping_cart</mat-icon>Shto</button>
+    </div>
+</div>
+<div *ngIf="!data.name">
+    <h1>Product does not exists.</h1>
+</div>

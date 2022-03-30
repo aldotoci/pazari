@@ -1,0 +1,28 @@
+.container{
+    position: absolute;
+    background-color: white;
+    width: 436px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
+.productResults{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px grey solid;
+}
+.productResults > img{
+    width: 70px;
+}
+.name{
+    margin-left: 10px;
+    margin-right: 5px;
+}
+.last-product{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.last-product > img{
+    width: 70px;
+}

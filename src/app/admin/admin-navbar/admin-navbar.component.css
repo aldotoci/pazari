@@ -1,0 +1,48 @@
+.title{
+    margin-bottom: 1px;
+    margin-left: 15px;
+}
+.navbar-toggler{
+    margin-left:auto;
+}
+@media(max-width: 922px) {
+    .navbar-collapse{
+        text-align: center;
+        float: center;
+        flex-basis: 100%;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .show {
+        flex-basis: 100%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media(min-width: 922px) {
+    .navbar-expand-lg .navbar-collapse {
+        display: flex!important;
+        flex-basis: auto;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+ul{
+    display: flex;
+    align-items: flex-end;
+    display: contents;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+li > a{
+    display: flex;
+    align-items: center;
+    font-size: larger;
+}
+.log_out{
+    border-width: 0px;
+    background-color: inherit;
+}

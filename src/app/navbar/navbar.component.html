@@ -1,0 +1,38 @@
+<header>
+    <div>
+        <h1 class="logo"><a href="/">Pazari</a></h1>
+        <div class="all-container">
+            <div class="search-container">
+                <form class="search" autocomplete="off">
+                    <input name="query" type="text" [(ngModel)]="query">
+                    <button><mat-icon>search</mat-icon></button>
+                </form>
+                <app-mini-search-result [query]="query"></app-mini-search-result>
+            </div>
+            <div class="options_container">
+                <!--
+                <div class="options">
+                    <a href="">HOME</a>
+                    <a href="">ABOUT</a>
+                    <a href="">CONTACT</a>
+                </div>
+                -->
+                <div class="option-container">
+                    <a routerLink="">
+                        <mat-icon>shopping_cart</mat-icon>
+                        <a href="">Shporta(0)</a>
+                    </a>
+                </div>
+                <div class="option-container">
+                    <a routerLink="login">
+                        <mat-icon>login</mat-icon>
+                        <a routerLink="login">Login</a>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="menu-button">
+            <button><mat-icon>reorder</mat-icon></button>
+        </div>
+    </div>
+</header>

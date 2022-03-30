@@ -1,0 +1,10 @@
+<a [routerLink]="'/product/' + product._id">
+    <div>
+        <img [src]="product.image" [alt]="product.name">
+        <h2>{{product.name}}</h2>
+        <div>
+            <span>Model: {{product.model}}</span><br>
+            <span>{{product.price.toString() | currency:'EUR'}}</span>
+        </div>
+    </div>
+</a>

@@ -1,0 +1,31 @@
+.product-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.product-container > img {
+    width: 350px;
+}
+.product-container > div {
+    margin-top: 30px;
+    width: 300px;
+}
+.product-container > div > h1{
+    font-family: 'K2D', sans-serif; 
+    text-align: center;
+}
+.product-container > div > h3{
+    font-family: 'K2D', sans-serif;
+}
+.price{
+}
+.product-container > div > button{
+    display: flex;
+    border: none;
+    align-items: center;
+    padding: 7px;
+    color: white;
+    background-color: #1F85DE;
+    margin-left: auto;
+    margin-right: auto;
+}

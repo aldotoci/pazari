@@ -1,0 +1,9 @@
+<div *ngIf="products !== null"  class="container">
+    <a [routerLink]="'/product/' + product.id" *ngFor="let product of products">
+        <div [class]="products.indexOf(product) === products.length-1 ? 'last-product' : 'productResults'" >
+            <img [src]="product.image">
+            <div class="name">{{product.name}}</div>
+            <div>{{product.price | currency:'EUR'}}</div>
+        </div>
+    </a>
+</div>

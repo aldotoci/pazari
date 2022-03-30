@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="search-bar-container">
+        <div class="search-bar">
+            <input [(ngModel)]="query" (ngModelChange)="search5Items()" type="text">
+            <button>Search</button>
+        </div>
+        <div class="resultContainer" *ngIf="searchResultUnder !==null && searchResultUnder.length > 0">
+            <div *ngFor="let product of searchResultUnder" class="result">
+                <a [routerLink]="product._id">
+                    <img [src]="product.image">
+                    <div class="name">{{product.name}}</div>
+                    <div>{{product.price}}</div>
+                </a>
+            </div>
+        </div>
+        <div *ngIf="searchResultUnder !== null">
+                <p *ngIf="searchResultUnder.length === 0">No Product found.</p>
+        </div>
+    </div>
+</div>

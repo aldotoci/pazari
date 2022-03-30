@@ -1,0 +1,22 @@
+<div class="container_loginForm">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+    <p class="login-text">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-lock fa-stack-1x"></i>
+      </span>
+    </p>
+    <input formControlName="username" type="email" class="login-username" autofocus="true" required="true" placeholder="User" />
+    <input formControlName="password" type="password" class="login-password" required="true" placeholder="Password" />
+    <button type="submit" name="Login" class="login-submit">Login</button>
+</form>
+  <div *ngIf="didLogginFailed" class="failed">
+    Loggin faild!
+  </div>
+  <div *ngIf="didLogginFailed" class="alert">
+    We keep logs of all Trafic. <br>
+    Do not try any stupid shit.
+  </div>
+  <div class="underlay-photo"></div>
+  <div class="underlay-black"></div> 
+</div>

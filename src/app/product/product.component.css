@@ -1,0 +1,12 @@
+div{
+    width: 230px;
+    height: 375px;
+}
+div img{
+    width: 230px;
+    height: 230px;
+    object-fit: contain;
+}
+div > div {
+    height: auto;
+}

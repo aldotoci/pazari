@@ -1,0 +1,63 @@
+<div class="update-container">
+    <h1 class="title">Update a product</h1>
+    <div class="form">
+        <form [formGroup]="data" (ngSubmit)="updateProduct()">
+            <div>
+                <mat-form-field color="accent" appearance="outline">
+                    <mat-label>Name of the Product</mat-label>
+                    <input [(ngModel)]="dataFromApi.name" (change)="checkName(data.value.name)" namerequired formControlName="name" type="text" matInput placeholder="Placeholder">
+                    <!--<mat-icon matSuffix>sentiment_very_satisfied</mat-icon> <mat-hint>Hint</mat-hint> -->
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Model</mat-label>
+                    <input [(ngModel)]="dataFromApi.model" required formControlName="model" type="text" matInput placeholder="Placeholder">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <input [(ngModel)]="dataFromApi.description" required formControlName="description" type="text" matInput placeholder="Placeholder">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Quantity</mat-label>
+                    <input [(ngModel)]="dataFromApi.quantity" required formControlName="quantity" type="number" matInput placeholder="Placeholder">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Price</mat-label>
+                    <input [(ngModel)]="dataFromApi.price" required formControlName="price" type="number" matInput placeholder="Placeholder">
+                    <mat-icon matSuffix>euro_symbol</mat-icon>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Image URL</mat-label>
+                    <input [(ngModel)]="dataFromApi.image" required formControlName="image" type="text" matInput placeholder="Add Image URL">
+                    <mat-icon matSuffix>add_photo_alternate</mat-icon>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Tags ex. trapan, pinca, ...</mat-label>
+                    <input [(ngModel)]="dataFromApi.tags" required formControlName="tags"matInput placeholder="Placeholder">
+                    <mat-icon matSuffix>queue</mat-icon>
+                </mat-form-field>
+            </div>
+            <button class="submit"mat-raised-button>Update</button>
+        </form>
+        <div class="failed" *ngIf="failed" >
+            <h2>Product Failed Succesfully</h2>
+        </div>
+        <div  *ngIf="success">
+            <h2 class="success">Product Saved Succesfully</h2>
+        </div>
+        <div *ngIf="doesNameExists" class="doesNameExists">
+            <h2 class="worning">Product exists already</h2>
+        </div>
+    </div>
+</div>

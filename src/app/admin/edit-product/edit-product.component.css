@@ -1,0 +1,38 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.update-container{
+    margin-left: auto;
+    margin-right: auto;
+}
+.title{
+    margin-right: auto;
+    margin-left: auto;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+form > div{
+    margin: 10px;
+    height: 57px;
+}
+.mat-form-field{
+    width: 200px;
+}
+.submit{
+    height: 48px;
+}
+.worning{
+    color: red;
+    text-align: center;
+}
+.success{
+    color: green;
+    text-align: center;
+}
