@@ -1,1 +1,1 @@
-export const uri = 'http://localhost:3000'
+export const uri = 'https://myshopap123i.herokuapp.com/
