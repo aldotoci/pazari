@@ -2,27 +2,36 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 <div class="container">
+    <div *ngIf="isUserEmpty || isPasswordEmpty" class="worning">
+        <p>{{isUserEmpty ? (isPasswordEmpty ? 'Username and password should not be empty!' : 'Username should not be empty!') : (isPasswordEmpty ? 'Password should not be empty!' : '')}}</p>
+    </div>
+    <div *ngIf="loginFailedMessage !== null" class="worning">
+        <p>{{loginFailedMessage}}</p>
+    </div>
     <div class="wrapper">
-        <form class="login"action="">
+        <form class="login"action="" [formGroup]="loginForm" (ngSubmit)="onLogIn()">
             <div class="loginTitle">Login</div>
             <div class="username">
-                <span class="userpass">Username</span>
-                <input class="input" type="text" name="username" placeholder="Type your username">
+                <span class="userpass">User</span>
+                <input formControlName="user" class="input" type="text" name="username" placeholder="Type your username or email">
             </div>
             <div class="password">
                 <span class="userpass" for="password">Password</span>
-                <input class="input" type="password" name="password" placeholder="Type your password">
+                <input formControlName="password" class="input" type="password" name="password" placeholder="Type your password">
             </div>
             <div class="forget">
                 <span><a href="">Forgot password?</a></span>
             </div>
-            <div>
-                <div>
-                    <div></div>
-                    <button>Login</button>
+            <div class="login-container">
+                <div class="login-wrapper">
+                    <div class="motion-effect"></div>
+                    <button class="login">Login</button>
                 </div>
             </div>
-            
         </form>
+        <div class="signUp">
+            <span>Have you not register yet?</span>
+            <a routerLink="/register">Sign Up</a>
+        </div>
     </div>
 </div>

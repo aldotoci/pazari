@@ -4,8 +4,6 @@ div {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
-
 .container{
     width: 500px;
     background: #fff;
@@ -25,6 +23,12 @@ div {
     background-position: center;
     background-size: cover;
 }
+@media screen and (max-width: 575px) {
+    .wrapper{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
 .login{
     width: 100%;
 }
@@ -38,17 +42,15 @@ div {
 }
 .username{
     width: 100%;
-    position: relative;
     border-bottom: 2px solid #d9d9d9;
     margin-bottom: 23px;
 }
 .password{
     width: 100%;
-    position: relative;
     border-bottom: 2px solid #d9d9d9;
 }
 .userpass{
-    font-size: 14px;
+    font-size: 19px;
     color: #333333;
     line-height: 1.5;
     padding-left: 7px;
@@ -78,4 +80,85 @@ div {
     line-height: 1.7;
     color: #666666;
     margin: 0px;
+}
+.login-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.login-wrapper{
+    width: 100%;
+    display: block;
+    position: relative;
+    z-index: 1;
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.motion-effect{
+    background: -webkit-linear-gradient(right, #ed1000, #ee0017, #00dbde, #0dcaf0);
+    position: absolute;
+    z-index: -1;
+    width: 300%;
+    height: 100%;
+    top: 0;
+    left: -200%;
+    transition: all 0.4s;
+}
+.login-wrapper > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    outline: none !important;
+    border: none;
+    background: transparent;
+    overflow: visible;
+    margin: 0;
+    touch-action: manipulation;
+}
+.login:hover .motion-effect{
+    left: 0;
+}
+.signUp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.signUp > a{
+    font-size: 16px;
+    margin-top: 12px;
+}
+.signUp > span{
+    color:#666666;
+}
+.worning{
+    position: fixed;
+    color: white;
+    background: red;
+    display: flex;
+    width: 500px;
+    height: 54px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0px;
+    padding-right: 30px;
+    padding-left: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.worning > p{
+    padding-top: 13px;
+    padding-bottom: 5px;
+    padding-right: 30px;
+    padding-left: 30px;
+    color: white;
 }

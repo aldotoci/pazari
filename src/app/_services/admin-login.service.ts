@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { TokenService } from './token.service';
+import { uri } from './uri';
 
-const API_URI = "http://localhost:3000/admin/"
+const API_URI = uri + "/admin/"
 
 @Injectable({
   providedIn: 'root'

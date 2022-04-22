@@ -11,6 +11,7 @@ export class MiniSearchResultComponent implements OnInit {
   @Input() query = ''
   products: any = null
 
+
   ngOnInit(): void {
     
   }
@@ -22,6 +23,10 @@ export class MiniSearchResultComponent implements OnInit {
     }else{
       this.products = null
     }
+  }
+
+  onProductClick(): void{
+    this.products = null
   }
 
 }

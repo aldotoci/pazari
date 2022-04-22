@@ -53,7 +53,8 @@ const routes: Routes = [
     },
   ],},
   {path: 'admin_login', component: AdminLogin},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({

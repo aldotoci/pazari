@@ -1,1 +1,68 @@
-<p>register works!</p>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+<div class="container">
+    <div *ngIf="error !== null" class="errorContainer">
+        <div class="errorWrapper">  
+            <p>{{error}}</p>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+        <form [formGroup]="registerForm" class="register" (ngSubmit)="onSubmit()">
+            <div class="registerTitle">Register</div>
+            <div class="inputs-container">
+                <div class="input-conainer">
+                    <span >First Name </span>
+                    <input [class]="!isValid && registerForm.value.firstname.length === 0 ? 'isNotValid input': 'input'" required formControlName="firstname" type="text" name="username" [placeholder]="!isValid && registerForm.value.firstname.length === 0 ? 'First name should not be empty' : 'Type your First Name'">
+                </div>
+                <div class="input-conainer">
+                    <span class="userpass">Last Name</span>
+                    <input required formControlName="lastname" [class]="!isValid && registerForm.value.lastname.length === 0 ? 'isNotValid input': 'input'" type="text" name="username" [placeholder]="!isValid && registerForm.value.lastname.length === 0 ? 'Last Name should not be empty' : 'Type your Last Name'">
+                </div>
+                <div class="input-conainer">
+                    <span class="userpass">Username <span *ngIf="doesUsernameExists" class="inputWorning">User already exists</span></span>
+                    <input (keyup)="checkUsername()" required formControlName="username" [class]="!isValid && registerForm.value.username.length === 0 ? 'isNotValid input': 'input'" type="text" name="username" [placeholder]="!isValid && registerForm.value.username.length === 0 ? 'Username should not be empty' : 'Type your username'">
+                </div>
+                <div class="input-conainer">
+                    <span class="userpass">Phone Number <span *ngIf="doesPhoneExists" class="inputWorning">Phone already exists</span></span>
+                    <div class="phone-number">
+                        <select formControlName="prefix" id="prefix">
+                            <option value="355">+355</option>
+                            <option value="383">+383</option>
+                            <option value="389">+389</option>
+                            <option value="30">+30</option>
+                        </select>
+                        <input (keyup)="checkPhone()" required formControlName="phone" [class]="!isValid && registerForm.value.phone.length === 0 ? 'isNotValid input': 'input'" id="phone-input" type="text" name="username" [placeholder]="!isValid && registerForm.value.phone.length === 0 ? 'Phone number should not be empty' : 'Type your phone number'">
+                    </div>
+                </div>
+                <div class="input-conainer">
+                    <span class="userpass">Email <span *ngIf="doesEmailExists" class="inputWorning">Email already exists</span></span>
+                    <input (keyup)="checkEmail()" required formControlName="email" [class]="!isValid && registerForm.value.email.length === 0 ? 'isNotValid input': 'input'" type="email" name="email" [placeholder]="!isValid && registerForm.value.email.length === 0 ? 'Email should not be empty' : 'Type your email'">
+                </div>
+                <div class="input-conainer">
+                    <span class="userpass">Confirm Email</span>
+                    <input required formControlName="confirmEmail" [class]="!isValid && registerForm.value.confirmEmail.length === 0 ? 'isNotValid input': 'input'" type="text" name="username" [placeholder]="!isValid && registerForm.value.confirmEmail.length === 0 ? 'Confirm email should not be empty' : 'Confirm your email'">
+                </div>
+                <div class="input-conainer">
+                    <span class="userpass" for="password">Password</span>
+                    <input required formControlName="password" [class]="!isValid && registerForm.value.password.length === 0 ? 'isNotValid input': 'input'" type="password" name="password" [placeholder]="!isValid && registerForm.value.password.length === 0 ? 'Password should not be empty' : 'Type your password'">
+                </div>
+                <div class="input-conainer">
+                    <span class="userpass" for="Confirm password">Confirm password</span>
+                    <input required formControlName="confirmPassword" [class]="!isValid && registerForm.value.confirmPassword.length === 0 ? 'isNotValid input': 'input'" type="password" name="password" [placeholder]="!isValid && registerForm.value.confirmPassword.length === 0 ? 'Confirm password should not be empty' : 'Confirm your password'">
+                </div>
+            </div>
+            <div class="login-container">
+                <div class="login-wrapper">
+                    <div class="motion-effect"></div>
+                    <input type="submit" class="login" value="Register">
+                </div>
+            </div>
+        </form>
+        <div class="logIn">
+            <span>Have you not register yet?</span>
+            <a routerLink="/login">Log In</a>
+        </div>
+    </div>
+</div>

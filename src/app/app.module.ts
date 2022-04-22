@@ -27,7 +27,9 @@ import { ProductDetailsComponent } from './product/product-details/product-detai
 import { ErrorComponent } from './error/error.component';
 import { MiniSearchResultComponent } from './navbar/mini-search-result/mini-search-result.component';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component'
+import { RegisterComponent } from './register/register.component';
+import { UserComponent } from './user/user.component';
+import { ProfileComponent } from './user/profile/profile.component'
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { RegisterComponent } from './register/register.component'
     MiniSearchResultComponent,
     LoginComponent,
     RegisterComponent,
+    UserComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
